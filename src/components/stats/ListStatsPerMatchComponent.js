@@ -120,8 +120,9 @@ const ListStatsPerMatchComponent = () => {
                                         <th>Economy Rate</th>
                                         <th>Catch Taken</th>
                                         <th>Impact Player</th>
-                                        <th>Total Points (New System)</th>
-                                        <th>Total Points (Old System)</th>
+                                        <th>Dream 11 (New System)</th>
+                                        <th>Dream 11 (Old System)</th>
+                                        <th>My 11 Circle</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -139,8 +140,9 @@ const ListStatsPerMatchComponent = () => {
                                             <td>{stat.economyRate || 0}</td>
                                             <td>{stat.catchTaken || 0}</td>
                                             <td>{stat.isImpactPlayer ? 'Yes' : 'No'}</td>
-                                            <td>{stat.totalPointNewSystem || 0}</td>
-                                            <td>{stat.totalPointOldSystem || 0}</td>
+                                            <td>{stat.totalPointDream11NewSystem || 0}</td>
+                                            <td>{stat.totalPointDream11OldSystem || 0}</td>
+                                            <td>{stat.totalPointDream11OldSystem || 0}</td>
                                         </tr>
                                     ))}
                                 </tbody>

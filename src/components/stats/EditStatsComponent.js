@@ -120,12 +120,17 @@ const EditStatsComponent = () => {
         }
     };
 
+    const convertOversToBalls = (overs) => {
+        const [wholeOvers, partialOvers] = overs.toString().split('.').map(Number);
+        return (wholeOvers * 6) + (partialOvers || 0);
+    };
+
     const saveStats = (e) => {
         e.preventDefault();
         const calculatedStats = {
             ...stats,
             strikeRate: stats.runsScored && stats.ballFaced ? ((stats.runsScored / stats.ballFaced) * 100).toFixed(2) : 0,
-            economyRate: stats.overs && stats.runsConceded ? (stats.runsConceded / stats.overs).toFixed(2) : 0
+            economyRate: stats.overs && stats.runsConceded ? ((stats.runsConceded / convertOversToBalls(stats.overs))*6).toFixed(2) : 0
         };
         updateStats(id, calculatedStats).then(response => {
             navigate('/stats');
@@ -345,7 +350,7 @@ const EditStatsComponent = () => {
                                 <div className="form-group">
                                     <label>Economy Rate</label>
                                     <input type="number" step="0.01" name="economyRate" className="form-control"
-                                        value={stats.overs && stats.runsConceded ? (stats.runsConceded / stats.overs).toFixed(2) : 0}
+                                         value={stats.overs && stats.runsConceded ? ((stats.runsConceded / convertOversToBalls(stats.overs))*6).toFixed(2) : 0} 
                                         disabled />
                                 </div>
                             </div>

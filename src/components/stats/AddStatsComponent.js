@@ -118,12 +118,18 @@ const AddStatsComponent = () => {
         }
     };
 
+    
+    const convertOversToBalls = (overs) => {
+        const [wholeOvers, partialOvers] = overs.toString().split('.').map(Number);
+        return (wholeOvers * 6) + (partialOvers || 0);
+    };
+
     const saveStats = (e) => {
         e.preventDefault();
         const calculatedStats = {
             ...stats,
             strikeRate: stats.runsScored && stats.ballFaced ? ((stats.runsScored / stats.ballFaced) * 100).toFixed(2) : 0,
-            economyRate: stats.overs && stats.runsConceded ? (stats.runsConceded / stats.overs).toFixed(2) : 0
+            economyRate: stats.overs && stats.runsConceded ? ((stats.runsConceded / convertOversToBalls(stats.overs))*6).toFixed(2) : 0
         };
         createStats(calculatedStats).then(response => {
             navigate('/stats');
@@ -132,86 +138,87 @@ const AddStatsComponent = () => {
         });
     };
 
+
     return (
         <div className="container mt-4">
             <h2 className="text-center mb-4">Add Match Statistics</h2>
             <form>
                 {/* Player Section */}
-                                <div className="card mb-4">
-                                    <div className="card-header bg-primary text-white">
-                                        Player Section
-                                    </div>
-                                    <div className="card-body">
-                                        <div className="row">
-                                            <div className="col-md-4">
-                                                <div className="form-group">
-                                                    <label>Season</label>
-                                                    <Select
-                                                        name="seasonId"
-                                                        options={seasons}
-                                                        onChange={(option) => handleSelectChange(option, { name: 'seasonId' })}
-                                                        className="basic-single"
-                                                        classNamePrefix="select"
-                                                        isClearable
-                                                    />
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4">
-                                                <div className="form-group">
-                                                    <label>Match</label>
-                                                    <Select
-                                                        name="matchId"
-                                                        options={matches}
-                                                        onChange={(option) => handleSelectChange(option, { name: 'matchId' })}
-                                                        className="basic-single"
-                                                        classNamePrefix="select"
-                                                        isClearable
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div className="row">
-                                            <div className="col-md-4">
-                                                <div className="form-group">
-                                                    <label>Match Between</label>
-                                                    {matchDetails.map(detail => (
-                                                        <div key={detail.matchDate}>
-                                                            <img src={detail.team1} alt='team1' style={{ width: '50px', height: '50px' }} /> VS
-                                                            <img src={detail.team2} alt='team2' style={{ width: '50px', height: '50px' }} />
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            <div className="col-md-4">
-                                                <div className="form-group">
-                                                    <label>Match Date</label>
-                                                    {matchDetails.map(detail => (
-                                                        <div>
-                                                          <span>{detail.matchDate}</span>  
-                                                        </div>
-                                                    ))}
-                                                </div>
-                                            </div>
-                                            </div>
-                                            <div className="row">
-                                            <div className="col-md-4">
-                                                <div className="form-group">
-                                                    <label>Player</label>
-                                                    <Select
-                                                        name="playerId"
-                                                        options={players}
-                                                        onChange={(option) => handleSelectChange(option, { name: 'playerId' })}
-                                                        className="basic-single"
-                                                        classNamePrefix="select"
-                                                        isClearable
-                                                    />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                <div className="card mb-4">
+                    <div className="card-header bg-primary text-white">
+                        Player Section
+                    </div>
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="form-group">
+                                    <label>Season</label>
+                                    <Select
+                                        name="seasonId"
+                                        options={seasons}
+                                        onChange={(option) => handleSelectChange(option, { name: 'seasonId' })}
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        isClearable
+                                    />
                                 </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="form-group">
+                                    <label>Match</label>
+                                    <Select
+                                        name="matchId"
+                                        options={matches}
+                                        onChange={(option) => handleSelectChange(option, { name: 'matchId' })}
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        isClearable
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="form-group">
+                                    <label>Match Between</label>
+                                    {matchDetails.map(detail => (
+                                        <div key={detail.matchDate}>
+                                            <img src={detail.team1} alt='team1' style={{ width: '50px', height: '50px' }} /> VS
+                                            <img src={detail.team2} alt='team2' style={{ width: '50px', height: '50px' }} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                            <div className="col-md-4">
+                                <div className="form-group">
+                                    <label>Match Date</label>
+                                    {matchDetails.map(detail => (
+                                        <div>
+                                            <span>{detail.matchDate}</span>  
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="row">
+                            <div className="col-md-4">
+                                <div className="form-group">
+                                    <label>Player</label>
+                                    <Select
+                                        name="playerId"
+                                        options={players}
+                                        onChange={(option) => handleSelectChange(option, { name: 'playerId' })}
+                                        className="basic-single"
+                                        classNamePrefix="select"
+                                        isClearable
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-                                {/* Batting Section */}
+                {/* Batting Section */}
                 <div className="card mb-4">
                     <div className="card-header bg-success text-white">
                         Batting Section
@@ -251,7 +258,6 @@ const AddStatsComponent = () => {
                                     <input type="number" name="sixes" className="form-control" value={stats.sixes} onChange={handleChange} min="0" />
                                 </div>
                             </div>
-                          
                         </div>
                     </div>
                 </div>
@@ -317,7 +323,6 @@ const AddStatsComponent = () => {
                                 </div>
                             </div>
                         </div>
-                        
                     </div>
                 </div>
 
@@ -344,12 +349,12 @@ const AddStatsComponent = () => {
                                 <div className="form-group">
                                     <label>Economy Rate</label>
                                     <input type="number" step="0.01" name="economyRate" className="form-control"
-                                     value={stats.overs && stats.runsConceded ? (stats.runsConceded / stats.overs).toFixed(2) : 0} 
+                                     value={stats.overs && stats.runsConceded ? ((stats.runsConceded / convertOversToBalls(stats.overs))*6).toFixed(2) : 0} 
                                      disabled/>
                                 </div>
                             </div>
-                            </div>
-                            <div className="row">
+                        </div>
+                        <div className="row">
                             <div className="col-md-3">
                                 <div className="form-group">
                                     <label>Total Wickets</label>
@@ -376,8 +381,6 @@ const AddStatsComponent = () => {
                                     <input type="number" name="maiden" className="form-control" value={stats.maiden} onChange={handleChange} min="0" />
                                 </div>
                             </div>
-                            
-                          
                         </div>
                     </div>
                 </div>
