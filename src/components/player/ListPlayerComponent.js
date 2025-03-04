@@ -23,7 +23,7 @@ const ListPlayerComponent = () => {
                 paging: true,
                 searching: true,
                 ordering: true,
-                order: [[0, 'desc']],
+                order: [[25, 'desc']],
                 info: true,
                 responsive: true
             });
@@ -67,6 +67,8 @@ const ListPlayerComponent = () => {
                         <th>Player Name</th>
                         <th>Nick Name</th>
                         <th>Role</th>
+                        <th>Batting Style</th>
+                        <th>Bowling Style</th>                        
                         <th>Country</th>
                         <th>Actions</th>
                     </tr>
@@ -86,6 +88,8 @@ const ListPlayerComponent = () => {
                             <td>{player.playerName}</td>
                             <td>{player.nickName}</td>
                             <td>{player.role}</td>
+                            <td>{player.battingStyle}</td>
+                            <td>{player.bowlingStyle}</td>
                             <td>{player.country}</td>
                             <td>
                                 <i 

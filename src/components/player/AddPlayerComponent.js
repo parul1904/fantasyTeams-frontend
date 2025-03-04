@@ -48,6 +48,27 @@ const AddPlayerComponent = () => {
                     </select>
                 </div>
                 <div className="form-group">
+                    <label>Batting Style</label>
+                    <select name="battingStyle" className="form-control" value={player.battingStyle} onChange={handleChange}>
+                        <option value="">Select Batting Style</option>
+                        <option value="Right Handed Bat">Right Handed Bat</option>
+                        <option value="Left Handed Bat">Left Handed Bat</option>
+                    </select>
+                </div>
+                <div className="form-group">
+                    <label>Bowling Style</label>
+                    <select name="bowlingStyle" className="form-control" value={player.bowlingStyle} onChange={handleChange}>
+                        <option value="">Select Bowling Style</option>
+                        <option value="Right Arm Fast">Right Arm Fast</option>
+                        <option value="Left Arm Fast">Left Arm Fast</option>
+                        <option value="Right Arm Medium Fast">Right Arm Medium Fast</option>
+                        <option value="Left Arm Medium Fast">Left Arm Medium Fast</option>
+                        <option value="Off-Spinner">Off-Spinner</option>
+                        <option value="Leg-Spinner">Leg-Spinner</option>
+                        <option value="Orthodox">Orthodox</option>
+                    </select>
+                </div>
+                <div className="form-group">
                     <label>Country</label>
                     <input type="text" name="country" className="form-control" value={player.country} onChange={handleChange} />
                 </div>
