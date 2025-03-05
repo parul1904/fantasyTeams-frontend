@@ -1,24 +1,26 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import HeaderComponent from './components/HeaderComponent';
-import FooterComponent from './components/FooterComponent';
-import HomeComponent from './components/HomeComponent';
-import ListPlayerComponent from './components/player/ListPlayerComponent';
-import AddPlayerComponent from './components/player/AddPlayerComponent';
-import EditPlayerComponent from './components/player/EditPlayerComponent';
-import ListTeamComponent from './components/team/ListTeamComponent';
-import AddTeamComponent from './components/team/AddTeamComponent';
-import EditTeamComponent from './components/team/EditTeamComponent';
-import AddMatchComponent from './components/match/AddMatchComponent';
-import ListMatchComponent from './components/match/ListMatchComponent';
-import EditMatchComponent from './components/match/EditMatchComponent';
-import AddSquadComponent from './components/squad/AddSquadComponent';
-import ListSquadComponent from './components/squad/ListSquadComponent';
-import EditSquadComponent from './components/squad/EditSquadComponent';
-import ListStatsComponent from './components/stats/ListStatsComponent';
-import ListStatsPerMatchComponent from './components/stats/ListStatsPerMatchComponent';
-import AddStatsComponent from './components/stats/AddStatsComponent';
-import EditStatsComponent from './components/stats/EditStatsComponent';
+import HeaderComponent from './components/admin/HeaderComponent';
+import FooterComponent from './components/admin/FooterComponent';
+import HomeComponent from './components/admin/HomeComponent';
+import ListPlayerComponent from './components/admin/player/ListPlayerComponent';
+import AddPlayerComponent from './components/admin/player/AddPlayerComponent';
+import EditPlayerComponent from './components/admin/player/EditPlayerComponent';
+import ListTeamComponent from './components/admin/team/ListTeamComponent';
+import AddTeamComponent from './components/admin/team/AddTeamComponent';
+import EditTeamComponent from './components/admin/team/EditTeamComponent';
+import AddMatchComponent from './components/admin/match/AddMatchComponent';
+import ListMatchComponent from './components/admin/match/ListMatchComponent';
+import EditMatchComponent from './components/admin/match/EditMatchComponent';
+import AddSquadComponent from './components/admin/squad/AddSquadComponent';
+import ListSquadComponent from './components/admin/squad/ListSquadComponent';
+import EditSquadComponent from './components/admin/squad/EditSquadComponent';
+import ListStatsComponent from './components/admin/stats/ListStatsComponent';
+import ListStatsPerMatchComponent from './components/admin/stats/ListStatsPerMatchComponent';
+import AddStatsComponent from './components/admin/stats/AddStatsComponent';
+import EditStatsComponent from './components/admin/stats/EditStatsComponent';
+import ListSquadDetailsComponent from './components/admin/squad/ListSquadComponent';
+import PlayerProfileComponent from './components/admin/player/PlayerProfileComponent';
 
 function App() {
     return (
@@ -44,6 +46,8 @@ function App() {
                         <Route path="/stats/match" element={<ListStatsPerMatchComponent />} />
                         <Route path="/add-stats" element={<AddStatsComponent />} />
                         <Route path="/edit-stats/:id" element={<EditStatsComponent />} />
+                        <Route path="/squad" element={<ListSquadDetailsComponent />} />
+                        <Route path="/player-profile/:playerId" element={<PlayerProfileComponent />} />
                     </Routes>
                 </div>
                 <FooterComponent />
