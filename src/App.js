@@ -21,6 +21,7 @@ import AddStatsComponent from './components/admin/stats/AddStatsComponent';
 import EditStatsComponent from './components/admin/stats/EditStatsComponent';
 import ListSquadDetailsComponent from './components/admin/squad/ListSquadComponent';
 import PlayerProfileComponent from './components/admin/player/PlayerProfileComponent';
+import ComparisonComponent from './components/admin/comparison/ComparisonComponent';
 
 function App() {
     return (
@@ -48,6 +49,7 @@ function App() {
                         <Route path="/edit-stats/:id" element={<EditStatsComponent />} />
                         <Route path="/squad" element={<ListSquadDetailsComponent />} />
                         <Route path="/player-profile/:playerId" element={<PlayerProfileComponent />} />
+                        <Route path="/comparison" element={<ComparisonComponent />} />
                     </Routes>
                 </div>
                 <FooterComponent />
