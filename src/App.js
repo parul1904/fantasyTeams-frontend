@@ -22,7 +22,7 @@ import EditStatsComponent from './components/admin/stats/EditStatsComponent';
 import ListSquadDetailsComponent from './components/admin/squad/ListSquadComponent';
 import PlayerProfileComponent from './components/admin/player/PlayerProfileComponent';
 import ComparisonComponent from './components/admin/comparison/ComparisonComponent';
-import DreamTeamComponent from './components/admin/dreamTeam/DreamTeamComponent';
+import TeamPage from './components/team/TeamPage';
 
 function App() {
     return (
@@ -51,9 +51,9 @@ function App() {
                         <Route path="/squad" element={<ListSquadDetailsComponent />} />
                         <Route path="/player-profile/:playerId" element={<PlayerProfileComponent />} />
                         <Route path="/comparison" element={<ComparisonComponent />} />
-                        <Route path="/dreamTeam" element={<DreamTeamComponent />} />
+                        <Route path="/dreamTeam" element={<TeamPage />} />
                     </Routes>
-                </div>
+                </div> 
                 <FooterComponent />
             </div>
         </Router>
