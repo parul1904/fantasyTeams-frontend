@@ -234,7 +234,7 @@ const ComparisonComponent = () => {
             />
           </Modal>
         </div>
-        <div className="col-1 d-flex position-relative align-items-center">Vs</div>
+        <div className="col-2 d-flex position-relative justify-content-center align-items-center">Vs</div>
         <div className="col-5 d-flex position-relative">
           <div
             className="image-box text-center"
