@@ -17,3 +17,28 @@
 .row {
   margin: 30px 0;
 }
+
+.comparison-card {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.comparison-card .card-header {
+  border-bottom: 2px solid rgba(0,0,0,0.1);
+}
+
+.comparison-card .table {
+  margin-bottom: 0;
+}
+
+.comparison-card .table th,
+.comparison-card .table td {
+  padding: 12px 15px;
+  vertical-align: middle;
+}
+
+.comparison-card .table tr:hover {
+  background-color: rgba(0,0,0,0.02);
+}

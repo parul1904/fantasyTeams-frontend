@@ -60,6 +60,14 @@ const HeaderComponent = () => {
                                     <li><Link to="/add-stats" className="dropdown-item">Add Stats</Link></li>
                                 </ul>
                             </li>
+                            <li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Dream Team
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><Link to="/dreamTeam" className="dropdown-item">View Dream Team</Link></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
