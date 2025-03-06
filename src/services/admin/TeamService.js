@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const TEAM_BASE_REST_API_URL = 'http://192.168.1.114:8080/api/v1/teams';
 
