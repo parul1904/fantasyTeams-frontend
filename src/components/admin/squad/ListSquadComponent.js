@@ -81,7 +81,7 @@ const ListSquadDetailsComponent = () => {
   }, []);
 
   const handlePlayerClick = (playerId) => {
-    navigate(`/stats/player/${playerId}`);
+    navigate(`/player-profile/${playerId}`);
     console.log("Player ID:: ", playerId);
   };
 
