@@ -1,0 +1,29 @@
+.navbar {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(#031537);
+  color: white;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 1rem 0;
+  width: 100%;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-item:hover {
+  background: linear-gradient(to top, white, rgba(255, 255, 255, 0.2));
+  color: #031537;
+}
