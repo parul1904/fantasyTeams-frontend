@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import {
   getPlayerById,
   listPlayers,
@@ -189,7 +190,7 @@ const ComparisonComponent = () => {
             }}
           >
             {selectedOption1 ? (
-              <img
+             <LazyLoadImage
                 src={selectedOption1.image}
                 alt={selectedOption1.label}
                 className="img-fluid"
@@ -253,7 +254,7 @@ const ComparisonComponent = () => {
             }}
           >
             {selectedOption2 ? (
-              <img
+              <LazyLoadImage
                 src={selectedOption2.image}
                 alt={selectedOption2.label}
                 className="img-fluid"

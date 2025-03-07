@@ -7,7 +7,7 @@ import 'datatables.net-bs5';
 import { listPlayers, deletePlayer } from '../../../services/admin/PlayerService';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const ListTeamComponent = () => {
+const ListTeamComponent = ({ userRole })  => {
 
     const [teams, setTeams] = useState([])
 
@@ -63,7 +63,9 @@ const ListTeamComponent = () => {
     return (
         <div className = "container">
             <br />
+            {userRole === 'admin' && (
             <button className = "btn btn-primary mb-2" onClick={addNewTeam }>Add Team</button>
+            )}
             <table id="teamsTable" className="table table-striped table-bordered">
                 <thead>   
                     <tr>

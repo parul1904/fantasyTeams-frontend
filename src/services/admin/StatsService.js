@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const STATS_BASE_REST_API_URL = "http://192.168.1.114:8080/api/v1/stats";
+const STATS_BASE_REST_API_URL = "http://43.204.102.164:8080/api/v1/stats";
 
 export const listStats = () => {
   return axios.get(STATS_BASE_REST_API_URL);

@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const TEAM_BASE_REST_API_URL = 'http://192.168.1.114:8080/api/v1/teams';
+const TEAM_BASE_REST_API_URL = 'http://43.204.102.164:8080/api/v1/teams';
 
 export const listTeams = () => {
     return axios.get(TEAM_BASE_REST_API_URL)

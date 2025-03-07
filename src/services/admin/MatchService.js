@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const MATCH_BASE_REST_API_URL = 'http://192.168.1.114:8080/api/v1/matches';
+const MATCH_BASE_REST_API_URL = 'http://43.204.102.164:8080/api/v1/matches';
 
 export const listMatchs = () => {
     return axios.get(MATCH_BASE_REST_API_URL)

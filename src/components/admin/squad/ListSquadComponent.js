@@ -18,7 +18,6 @@ const ListSquadDetailsComponent = () => {
     try {
       const response = await listTeams();
       setTeams(response.data);
-      console.log("Team Data:: ", response.data);
     } catch (error) {
       console.error("Error loading teams:", error);
     }
@@ -27,7 +26,6 @@ const ListSquadDetailsComponent = () => {
   const fetchSquadData = async (teamId) => {
     try {
       const response = await listSquadsByTeam(teamId);
-      console.log(response.data);
       setPlayerDetails(response.data.playerDetails);
       setTeamDetails(response.data.teamDetails);
     } catch (error) {
@@ -41,7 +39,6 @@ const ListSquadDetailsComponent = () => {
   };
 
   const categorizePlayers = (players) => {
-    console.log("Players are:: ", players);
     const categories = {
       Batters: [],
       "Wicket Keepers": [],

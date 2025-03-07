@@ -5,7 +5,7 @@ import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
 import 'datatables.net-bs5';
 import { listMatchs, deleteMatch } from '../../../services/admin/MatchService';
 
-const ListMatchComponent = () => {
+const ListMatchComponent = ({ userRole }) => {
     const [matches, setMatches] = useState([]);
     const navigate = useNavigate();
 
@@ -57,7 +57,9 @@ const ListMatchComponent = () => {
     return (
         <div className="container">
             <br />
-            <button className="btn btn-primary mb-2" onClick={addNewMatch}>Add Match</button>
+            {userRole === 'admin' && (
+                <button className="btn btn-primary mb-2" onClick={addNewMatch}>Add Match</button>
+            )}
             <table id="matchesTable" className="table table-striped table-bordered">
                 <thead>
                     <tr>
@@ -83,8 +85,7 @@ const ListMatchComponent = () => {
                             <td>{match.seasonYear}</td>
                             <td>{match.matchNo}</td>
                             <td>
-                                <img 
-                                    src={match.team1} 
+                                <img src={match.team1} 
                                     alt="Team 1" 
                                     className="img-thumbnail" 
                                     style={{ width: '50px', height: '50px' }} 
@@ -102,7 +103,7 @@ const ListMatchComponent = () => {
                             <td>{new Date(match.matchDate).toLocaleDateString()}</td>
                             <td>{match.matchTime}</td>
                             <td>
-                                <img 
+                                <img
                                     src={match.winnerTeam} 
                                     alt="Winner Team" 
                                     className="img-thumbnail" 

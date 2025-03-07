@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+
 import { updatePlayer, getPlayerById } from '../../../services/admin/PlayerService';
 
 const EditPlayerComponent = () => {

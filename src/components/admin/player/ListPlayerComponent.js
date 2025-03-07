@@ -6,7 +6,7 @@ import 'datatables.net-bs5';
 import { listPlayers, deletePlayer } from '../../../services/admin/PlayerService';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 
-const ListPlayerComponent = () => {
+const ListPlayerComponent = ({ userRole })  => {
     const [players, setPlayers] = useState([]);
     const navigate = useNavigate();
 
@@ -58,7 +58,9 @@ const ListPlayerComponent = () => {
     return (
         <div className="container">
             <br />
+            {userRole === 'admin' && (
             <button className="btn btn-primary mb-2" onClick={addNewPlayer}>Add Player</button>
+            )}
             <table id="playersTable" className="table table-striped table-bordered">
                 <thead>
                     <tr>

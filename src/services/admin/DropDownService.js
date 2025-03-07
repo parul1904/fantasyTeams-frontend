@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const DROPDOWN_BASE_REST_API_URL = 'http://192.168.1.114:8080/api/v1/dropdown';
+const DROPDOWN_BASE_REST_API_URL = 'http://43.204.102.164:8080/api/v1/dropdown';
 
 export const getTeams = () => {
     return axios.get(DROPDOWN_BASE_REST_API_URL + "/teams")

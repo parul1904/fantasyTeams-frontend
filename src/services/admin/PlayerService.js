@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const PLAYER_BASE_REST_API_URL = "http://192.168.1.114:8080/api/v1/players";
+const PLAYER_BASE_REST_API_URL = "http://43.204.102.164:8080/api/v1/players";
 
 export const listPlayers = () => {
   return axios.get(PLAYER_BASE_REST_API_URL);
