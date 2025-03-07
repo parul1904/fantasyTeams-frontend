@@ -1,28 +1,26 @@
-import axios from 'axios'
-
-const SQUAD_BASE_REST_API_URL = 'http://43.204.102.164:8080/api/v1/squads';
+import axios from "axios";
+import API_ENDPOINTS from "../environment-config";
 
 export const listSquads = () => {
-    return axios.get(SQUAD_BASE_REST_API_URL)
+  return axios.get(API_ENDPOINTS.SQUAD_LIST);
 };
 
 export const createSquad = (squad) => {
-    return axios.post(SQUAD_BASE_REST_API_URL + '/add-squad', squad);
-}
+  return axios.post(API_ENDPOINTS.CREATE_SQUAD, squad);
+};
 
 export const getSquadById = (squadId) => {
-    return axios.get(SQUAD_BASE_REST_API_URL + '/' + squadId);
-}
+  return axios.get(API_ENDPOINTS.GET_SQUAD_BY_ID(squadId));
+};
 
 export const updateSquad = (squadId, squad) => {
-    return axios.put(SQUAD_BASE_REST_API_URL + '/' +squadId, squad);
-}
+  return axios.put(API_ENDPOINTS.UPDATE_SQUAD(squadId), squad);
+};
 
 export const deleteSquad = (squadId) => {
-    return axios.delete(SQUAD_BASE_REST_API_URL + '/' + squadId);
-}
+  return axios.delete(API_ENDPOINTS.DELETE_SQUAD(squadId));
+};
 
 export const listSquadsByTeam = (teamId) => {
-    console.log('teamID from Service:: ', SQUAD_BASE_REST_API_URL +  teamId);
-    return axios.get(SQUAD_BASE_REST_API_URL + '/team/' + teamId)
+  return axios.get(API_ENDPOINTS.GET_SQUAD_BY_TEAM(teamId));
 };

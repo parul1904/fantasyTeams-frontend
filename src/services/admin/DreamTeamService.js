@@ -1,8 +1,7 @@
 import axios from 'axios';
-
-const BASE_REST_API_URL = 'http://43.204.102.164:8080/api/v1/dreamTeam';
+import API_ENDPOINTS from "../environment-config";
 
 export const getDreamTeamByMatchNo = (matchNo) => {
-    return axios.get(`${BASE_REST_API_URL}/match/${matchNo}`);
+    return axios.get(API_ENDPOINTS.DREAM_TEAM_BY_MATCH_NUM(matchNo));
 };
 
