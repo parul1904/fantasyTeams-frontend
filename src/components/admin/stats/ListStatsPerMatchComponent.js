@@ -99,7 +99,14 @@ const ListStatsPerMatchComponent = () => {
                     </div>
                 </div>
             )}
-            {selectedMatch && (
+
+            {selectedMatch && stats.length === 0 && (
+                <div className="text-center">
+                    <h3>Match not Played</h3>
+                </div>
+            )}
+
+            {selectedMatch && stats.length > 0 && (
                 <div>
                     <h3 className="text-center mb-4">Match Details</h3>
                     <div className="row">
@@ -109,6 +116,7 @@ const ListStatsPerMatchComponent = () => {
                                 <thead>
                                     <tr>
                                         <th>Player</th>
+                                        <th>Player Name</th>
                                         <th>Runs Scored</th>
                                         <th>Fours</th>
                                         <th>Sixes</th>
@@ -127,8 +135,9 @@ const ListStatsPerMatchComponent = () => {
                                 </thead>
                                 <tbody>
                                     {stats.slice(0, 11).map(stat => (
-                                        <tr key={stat.player}>
-                                            <td><img src={stat.player} alt="Player" style={{ width: '50px', height: '50px' }} /></td>
+                                        <tr key={stat.playerImage}>
+                                            <td><img src={stat.playerImage} alt="Player" style={{ width: '50px', height: '50px' }} /></td>
+                                            <td>{stat.playerName}</td>
                                             <td>{stat.runsScored || 0}</td>
                                             <td>{stat.fours || 0}</td>
                                             <td>{stat.sixes || 0}</td>
@@ -147,8 +156,9 @@ const ListStatsPerMatchComponent = () => {
                                     ))}
                                     <tr><td colSpan="15"><p style={{ textAlign: 'center' }}><strong>All above players are part of Dream Team</strong></p></td></tr>
                                     {stats.slice(11).map(stat => (
-                                        <tr key={stat.player}>
-                                            <td><img src={stat.player} alt="Player" style={{ width: '50px', height: '50px' }} /></td>
+                                        <tr key={stat.playerImage}>
+                                            <td><img src={stat.playerImage} alt="Player" style={{ width: '50px', height: '50px' }} /></td>
+                                            <td>{stat.playerName || 0}</td>
                                             <td>{stat.runsScored || 0}</td>
                                             <td>{stat.fours || 0}</td>
                                             <td>{stat.sixes || 0}</td>

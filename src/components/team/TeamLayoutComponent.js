@@ -6,8 +6,31 @@ const TeamLayoutComponent = ({ players }) => {
     return players.filter((player) => player.playerRole === role);
   };
 
+  const captain = players.reduce((prev, current) =>
+    prev.dream11OldPoints > current.dream11OldPoints ? prev : current
+  );
+  const viceCaptain = players
+    .filter((player) => player.playerId !== captain.playerId)
+    .reduce((prev, current) =>
+      prev.dream11OldPoints > current.dream11OldPoints ? prev : current
+    );
+
+  const totalPoints = players.reduce((sum, player) => {
+    if (player.playerId === captain.playerId) {
+      return sum + 2 * player.dream11OldPoints;
+    } else if (player.playerId === viceCaptain.playerId) {
+      return sum + 1.5 * player.dream11OldPoints;
+    } else {
+      return sum + player.dream11OldPoints;
+    }
+  }, 0);
+
   return (
     <div className="cricket-field">
+      <div className="total-points-box">
+        <h4>Total Points</h4>
+        <p>{totalPoints}</p>
+      </div>
       <div className="field-section wicket-keeper">
         {getPlayersByRole("Wicket Keeper").map((player) => (
           <PlayerCard
@@ -85,13 +108,23 @@ const PlayerCard = ({ player, allPlayers }) => {
         )}
       </div>
       <div className="player-info">
-        <div className={
-          player.playerId === captain.playerId ||
-          player.playerId === viceCaptain.playerId
-            ? "player-name player-name-captain"
-            : "player-name"
-        }>{player.playerNickName}</div>
-        <div className="player-points">{player.dream11OldPoints}</div>
+        <div
+          className={
+            player.playerId === captain.playerId ||
+            player.playerId === viceCaptain.playerId
+              ? "player-name player-name-captain"
+              : "player-name"
+          }
+        >
+          {player.playerNickName}
+        </div>
+        <div className="player-points">
+          {player.playerId === captain.playerId
+            ? 2 * player.dream11OldPoints
+            : player.playerId === viceCaptain.playerId
+            ? 1.5 * player.dream11OldPoints
+            : player.dream11OldPoints}
+        </div>
       </div>
     </div>
   );
