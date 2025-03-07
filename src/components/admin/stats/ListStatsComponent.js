@@ -5,7 +5,7 @@ import 'datatables.net-bs5/css/dataTables.bootstrap5.min.css';
 import 'datatables.net-bs5';
 import { listStats, deleteStats } from '../../../services/admin/StatsService';
 
-const ListStatsComponent = () => {
+const ListStatsComponent = ({ userRole })  => {
     const [stats, setStats] = useState([]);
     const navigate = useNavigate();
 
@@ -58,7 +58,9 @@ const ListStatsComponent = () => {
         <div className="container">
             <br /><br />
             <h2 className="text-center">List Statistics</h2>
+            {userRole === 'admin' && (
             <button className="btn btn-primary mb-2" onClick={addNewStats}>Add Statistics</button>
+            )}
             <table id="statsTable" className="table table-striped table-bordered">
                 <thead>
                     <tr>

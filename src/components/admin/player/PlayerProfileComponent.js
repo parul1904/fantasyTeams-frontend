@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { getPlayerById } from "../../../services/admin/PlayerService";
 import { getPlayerDetails } from "../../../services/admin/StatsService";
 
@@ -33,7 +34,7 @@ return (
             <div className="card-body">
                 <div className="row">
                     <div className="col-md-3 position-relative text-center" style={{ border: "5px solid rgb(7, 7, 7)", borderRadius: "10px", padding: "20px" }}>
-                        <img
+                      <LazyLoadImage
                             src={player.playerImgUrl}
                             alt={player.player}
                             className="card-img-top"
@@ -44,7 +45,7 @@ return (
                                 objectPosition: "top",
                             }}
                         />
-                        <img
+                       <LazyLoadImage
                             src={`https://fantasyteams.s3.ap-south-1.amazonaws.com/others/${player.playerCountry}.png`}
                             alt={player.playerCountry}
                             className="position-absolute"

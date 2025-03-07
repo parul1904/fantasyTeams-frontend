@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import HeaderComponent from './components/admin/HeaderComponent';
 import FooterComponent from './components/admin/FooterComponent';
 import HomeComponent from './components/admin/HomeComponent';
@@ -23,35 +23,41 @@ import ListSquadDetailsComponent from './components/admin/squad/ListSquadCompone
 import PlayerProfileComponent from './components/admin/player/PlayerProfileComponent';
 import ComparisonComponent from './components/admin/comparison/ComparisonComponent';
 import TeamPage from './components/team/TeamPage';
+import LoginPage from './components/LoginPage';
 
 function App() {
+    const [loggedIn, setLoggedIn] = useState(false);
+    const [userRole, setUserRole] = useState('');
+
     return (
         <Router>
             <div className="d-flex flex-column min-vh-100">
-                <HeaderComponent />
+                {loggedIn && <HeaderComponent userRole={userRole} />}
                 <div className="container flex-grow-1">
                     <Routes>
-                        <Route path="/" element={<HomeComponent />} />
-                        <Route path="/players" element={<ListPlayerComponent />} />
-                        <Route path="/add-player" element={<AddPlayerComponent />} />
-                        <Route path="/edit-player/:id" element={<EditPlayerComponent />} />
-                        <Route path="/teams" element={<ListTeamComponent />} />
-                        <Route path="/add-team" element={<AddTeamComponent />} />
-                        <Route path="/edit-team/:id" element={<EditTeamComponent />} />
-                        <Route path="/matches" element={<ListMatchComponent />} />
-                        <Route path="/add-match" element={<AddMatchComponent />} />
-                        <Route path="/edit-match/:id" element={<EditMatchComponent />} />
-                        <Route path="/add-squad" element={<AddSquadComponent />} />
-                        <Route path="/squads" element={<ListSquadComponent />} />
-                        <Route path="/edit-squad/:id" element={<EditSquadComponent />} />
-                        <Route path="/stats" element={<ListStatsComponent />} />
-                        <Route path="/stats/match" element={<ListStatsPerMatchComponent />} />
-                        <Route path="/add-stats" element={<AddStatsComponent />} />
-                        <Route path="/edit-stats/:id" element={<EditStatsComponent />} />
-                        <Route path="/squad" element={<ListSquadDetailsComponent />} />
-                        <Route path="/player-profile/:playerId" element={<PlayerProfileComponent />} />
-                        <Route path="/comparison" element={<ComparisonComponent />} />
-                        <Route path="/dreamTeam" element={<TeamPage />} />
+                        <Route path="/login" element={<LoginPage setLoggedIn={setLoggedIn} setUserRole={setUserRole} />} />
+                        <Route path="/" element={<Navigate to="/login" />} />
+                        <Route path="/home" element={loggedIn ? <HomeComponent /> : <Navigate to="/login" />} />
+                        <Route path="/players" element={loggedIn ? <ListPlayerComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/add-player" element={loggedIn ? <AddPlayerComponent /> : <Navigate to="/login" />} />
+                        <Route path="/edit-player/:id" element={loggedIn ? <EditPlayerComponent /> : <Navigate to="/login" />} />
+                        <Route path="/teams" element={loggedIn ? <ListTeamComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/add-team" element={loggedIn ? <AddTeamComponent /> : <Navigate to="/login" />} />
+                        <Route path="/edit-team/:id" element={loggedIn ? <EditTeamComponent /> : <Navigate to="/login" />} />
+                        <Route path="/matches" element={loggedIn ? <ListMatchComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/add-match" element={loggedIn ? <AddMatchComponent /> : <Navigate to="/login" />} />
+                        <Route path="/edit-match/:id" element={loggedIn ? <EditMatchComponent /> : <Navigate to="/login" />} />
+                        <Route path="/add-squad" element={loggedIn ? <AddSquadComponent /> : <Navigate to="/login" />} />
+                        <Route path="/squads" element={loggedIn ? <ListSquadComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/edit-squad/:id" element={loggedIn ? <EditSquadComponent /> : <Navigate to="/login" />} />
+                        <Route path="/stats" element={loggedIn ? <ListStatsComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/stats/match" element={loggedIn ? <ListStatsPerMatchComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/add-stats" element={loggedIn ? <AddStatsComponent /> : <Navigate to="/login" />} />
+                        <Route path="/edit-stats/:id" element={loggedIn ? <EditStatsComponent /> : <Navigate to="/login" />} />
+                        <Route path="/squad" element={loggedIn ? <ListSquadDetailsComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/player-profile/:playerId" element={loggedIn ? <PlayerProfileComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/comparison" element={loggedIn ? <ComparisonComponent userRole={userRole} /> : <Navigate to="/login" />} />
+                        <Route path="/dreamTeam" element={loggedIn ? <TeamPage userRole={userRole} /> : <Navigate to="/login" />} />
                     </Routes>
                 </div> 
                 <FooterComponent />

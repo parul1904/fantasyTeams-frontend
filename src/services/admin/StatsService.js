@@ -1,31 +1,30 @@
 import axios from "axios";
-
-const STATS_BASE_REST_API_URL = "http://192.168.1.114:8080/api/v1/stats";
+import API_ENDPOINTS from "../environment-config";
 
 export const listStats = () => {
-  return axios.get(STATS_BASE_REST_API_URL);
+  return axios.get(API_ENDPOINTS.STATS_LIST);
 };
 
 export const createStats = (stats) => {
-  return axios.post(STATS_BASE_REST_API_URL + "/add-stats", stats);
+  return axios.post(API_ENDPOINTS.CREATE_STATS, stats);
 };
 
 export const getStatsById = (statsId) => {
-  return axios.get(STATS_BASE_REST_API_URL + "/" + statsId);
+  return axios.get(API_ENDPOINTS.GET_STATS_BY_ID(statsId));
 };
 
 export const getStatsByMatchId = (matchId) => {
-  return axios.get(STATS_BASE_REST_API_URL + "/match/" + matchId);
+  return axios.get(API_ENDPOINTS.GET_STATS_BY_MATCH_ID(matchId));
 };
 
 export const updateStats = (statsId, stats) => {
-  return axios.put(STATS_BASE_REST_API_URL + "/" + statsId, stats);
+  return axios.put(API_ENDPOINTS.UPDATE_STATS(statsId), stats);
 };
 
 export const deleteStats = (statsId) => {
-  return axios.delete(STATS_BASE_REST_API_URL + "/" + statsId);
+  return axios.delete(API_ENDPOINTS.DELETE_STATS(statsId));
 };
 
 export const getPlayerDetails = (playerId) => {
-  return axios.get(STATS_BASE_REST_API_URL + "/player/" + playerId);
+  return axios.get(API_ENDPOINTS.GET_PLAYER_DETAILS(playerId));
 };

@@ -1,27 +1,26 @@
-import axios from 'axios'
-
-const MATCH_BASE_REST_API_URL = 'http://192.168.1.114:8080/api/v1/matches';
+import axios from "axios";
+import API_ENDPOINTS from "../environment-config";
 
 export const listMatchs = () => {
-    return axios.get(MATCH_BASE_REST_API_URL)
+  return axios.get(API_ENDPOINTS.MATCHES);
 };
 
 export const createMatch = (match) => {
-    return axios.post(MATCH_BASE_REST_API_URL + '/add-match', match);
-}
+  return axios.post(API_ENDPOINTS.CREATE_MATCH, match);
+};
 
 export const getMatchById = (matchId) => {
-    return axios.get(MATCH_BASE_REST_API_URL + '/' + matchId);
-}
+  return axios.get(API_ENDPOINTS.GET_MATCH_BY_ID(matchId));
+};
 
 export const updateMatch = (matchId, match) => {
-    return axios.put(MATCH_BASE_REST_API_URL + '/' +matchId, match);
-}
+  return axios.put(API_ENDPOINTS.UPDATE_MATCH(matchId), match);
+};
 
 export const deleteMatch = (matchId) => {
-    return axios.delete(MATCH_BASE_REST_API_URL + '/' + matchId);
-}
+  return axios.delete(API_ENDPOINTS.DELETE_MATCH(matchId));
+};
 
 export const getMatchDetails = (matchId) => {
-    return axios.get(MATCH_BASE_REST_API_URL + '/matchId/' + matchId);
-}
+  return axios.get(API_ENDPOINTS.GET_MATCH_DETAILS(matchId));
+};
