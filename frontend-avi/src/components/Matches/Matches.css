@@ -1,5 +1,5 @@
 .match-container {
-  max-width: 900px;
+  width: 65rem;
   margin: auto;
   height: 90vh;
   overflow-y: auto;
@@ -9,34 +9,33 @@
 .match-card {
   border: 1px solid #ddd;
   border-radius: 0.5rem;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   background-color: white;
-  /* height: 18rem; */
 }
 
 .match-header{
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  /* margin-bottom: 0.5rem; */
 }
 
 .matchesFooter {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1rem 0 0;
+  padding: 0.5rem 0 0;
 }
 
 .teams-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 1.5rem 0;
+  margin: 1rem 0;
 }
 .match-number, .match-date, .vs-text {
   font-weight: bold;
@@ -68,7 +67,7 @@
   font-weight: bold;
   font-size: 1.5rem;
   width: 20rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
 }
 
 .team img {
@@ -99,7 +98,7 @@
   color: white;
   border: none;
   padding: 0.5rem 1rem;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   font-weight: bold;
   text-transform: uppercase;
   cursor: pointer;

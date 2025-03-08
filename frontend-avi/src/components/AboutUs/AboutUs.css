@@ -1,56 +1,49 @@
-/* Background Styling */
 .about-wrapper {
-  background: linear-gradient(to bottom, #031537, #06266f, #0a3ba0);
-  min-height: 100vh;
+  height: "100%";
   display: flex;
-  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem;
 }
 
-/* About Us Container */
 .about-container {
-  max-width: 850px;
-  background: rgba(255, 255, 255, 0.1); /* Light transparent effect */
-  border-radius: 12px;
-  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
-  backdrop-filter: blur(10px); /* Glassmorphism effect */
-  color: white;
+  padding: 2rem;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
 }
 
-/* Title and Subtitles */
 .about-title {
-  color: #ffcc00;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #031537;
 }
 
-.about-subtitle {
-  color: #f5f5f5;
-}
-
-/* Text and Content */
 .about-text {
-  color: #e0e0e0;
-  margin-bottom: 15px;
+  color: #5e5b5b;
+  margin-bottom: 1rem;
 }
 
-/* Section Headings */
 .about-heading {
-  color: #00c3ff;
-  margin-top: 20px;
+  color: #06266f;
+  margin-top: 1rem;
 }
 
-/* List Styling */
 .about-list li {
-  font-size: 1.1rem;
-  color: #f5f5f5;
-  padding: 8px 0;
+  font-size: 1rem;
+  color: #5e5b5b;
+  padding: 0.5rem 0;
 }
 
 .check-icon {
-  color: #ffcc00;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 
-/* Footer */
 .about-footer {
-  color: #ffcc00;
-  margin-top: 20px;
+  color: #031537;
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

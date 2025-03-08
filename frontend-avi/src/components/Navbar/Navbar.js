@@ -8,7 +8,7 @@ export default function NavBar() {
   const navigate = useNavigate();
 
   const handleHome = () => {
-    navigate("/");
+    navigate("/home");
   };
 
   const handleTeams = () => {
@@ -19,8 +19,8 @@ export default function NavBar() {
     navigate("/matches");
   };
 
-  const handlePerformance = () => {
-    navigate("/performance");
+  const handleMatchCentre = () => {
+    navigate("/matchcentre");
   };
 
   const handleAboutUs = () => {
@@ -58,9 +58,6 @@ export default function NavBar() {
             </div>
             <div className="nav-item nav-link" onClick={handleTeams}>
               Teams
-            </div>
-            <div className="nav-item nav-link" onClick={handlePerformance}>
-              Performance
             </div>
             <div className="nav-item nav-link" onClick={handleMatches}>
               Matches

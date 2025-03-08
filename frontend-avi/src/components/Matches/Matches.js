@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import matchData from "./Matches.json";
 import "./Matches.css";
 
 const MatchSchedule = () => {
+  const navigate = useNavigate();
+
+  const handleMatchCentre = () => {
+    navigate("/matchcentre")
+  };
+
   return (
     <div className="match-container">
       {matchData.map((match, index) => (
@@ -52,7 +59,12 @@ const MatchSchedule = () => {
                 </div>
               </div>
             ) : (
-              <div className="match-centre-btn">Match Centre</div>
+              <div
+                className="match-centre-btn"
+                onClick={handleMatchCentre}
+              >
+                Match Centre
+              </div>
             )}
           </div>
         </div>
