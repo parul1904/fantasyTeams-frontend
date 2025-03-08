@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "team": "Chennai Super Kings",
+    "image": "CSK.png",
+    "captain": "Ruturaj Gaikwad",
+    "coach": "Stephan Fleming",
+    "owner": "Chennai Super Kings Cricket Limited",
+    "homeVenue": "M. A. Chidambaram Stadium",
+    "titleYears": "2010 2011 2018 2021 2023",
+    "color": "#FFCC32"
+  },
+  {
+    "id": 2,
+    "team": "Mumbai Indians",
+    "image": "MI.png",
+    "captain": "Hardik Pandya",
+    "coach": "Mahela Jayawardene",
+    "owner": "Indiawin Sports Private Limited",
+    "homeVenue": "Wankhede Stadium",
+    "titleYears": "2013 2015 2017 2019 2020",
+    "color": "#004B8D"
+  },
+  {
+    "id": 3,
+    "team": "Royal Challengers Bangalore",
+    "image": "RCB.png",
+    "captain": "Rajat Patidar",
+    "coach": "Andy Flower",
+    "owner": "Royal Challengers Sports Private Ltd",
+    "homeVenue": "M. Chinnaswamy Stadium",
+    "titleYears": "No Cups Yet",
+    "color": "#EC1C24"
+  },
+  {
+    "id": 4,
+    "team": "Kolkata Knight Riders",
+    "image": "KKR.png",
+    "captain": "",
+    "coach": "Chandrakant Pandit",
+    "owner": "Knight Riders Sports Private Limited",
+    "homeVenue": "Eden Gardens",
+    "titleYears": "2012, 2014, 2024",
+    "color": "#2E0854"
+  },
+  {
+    "id": 5,
+    "team": "Gujrat Titans",
+    "image": "GT.png",
+    "captain": "Shubman Gill",
+    "coach": "Ashish Nehra",
+    "owner": "Irelia Sports Inida Private Limited",
+    "homeVenue": "Narendra Modi Stadium",
+    "titleYears": "2022",
+    "color": "#1B2133"
+  },
+  {
+    "id": 6,
+    "team": "Sunrisers Hyderabad",
+    "image": "SRH.png",
+    "captain": "Pat Cummins",
+    "coach": "Daniel Vettori",
+    "owner": "Sun TV Network Limited",
+    "homeVenue": "Rajiv Gandhi International Cricket Stadium",
+    "titleYears": "2016",
+    "color": "#FF822A"
+  },
+  {
+    "id": 7,
+    "team": "Lucknow Super Giants",
+    "image": "LSG.png",
+    "captain": "Rishabh Pant",
+    "coach": "Justin Langer",
+    "owner": "RPSG Sports Private Limited",
+    "homeVenue": "BRSABV Ekana Cricket Stadium",
+    "titleYears": "No Cups Yet",
+    "color": "#3A5FAC"
+  },
+  {
+    "id": 8,
+    "team": "Delhi Capitals",
+    "image": "DC.png",
+    "captain": "",
+    "coach": "Hemang Badani",
+    "owner": "JSW GMR Cricket Private Limited",
+    "homeVenue": "Arun Jaitley Stadium",
+    "titleYears": "No Cups Yet",
+    "color": "#282968"
+  },
+  {
+    "id": 9,
+    "team": "Rajasthan Royals",
+    "image": "RR.png",
+    "captain": "Sanju Samson",
+    "coach": "Rahul Dravid",
+    "owner": "Royal Multisport Private Limited",
+    "homeVenue": "Sawai Mansingh Stadium",
+    "titleYears": "2008",
+    "color": "#E60693"
+  },
+  {
+    "id": 10,
+    "team": "Punjab Super Kings",
+    "image": "PBK.png",
+    "captain": "Shreyas Iyer",
+    "coach": "Ricky Ponting",
+    "owner": "K.P.H. Dream Cricket Private Limited",
+    "homeVenue": "PCA New Stadium",
+    "titleYears": "No Cups Yet",
+    "color": "#DC1E2B"
+  }
+]
