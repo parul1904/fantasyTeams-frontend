@@ -1,5 +1,5 @@
 const API_BASE_URL =
-  process.env.REACT_APP_API_BASE_URL || "https://43.204.102.164:8080/api/v1";
+  process.env.REACT_APP_API_BASE_URL || "https://13.200.227.239:8080/api/v1";
 
 export const API_ENDPOINTS = {
   // Login
